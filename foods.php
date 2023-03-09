@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foods</title>
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
     <?php
@@ -19,7 +20,10 @@
     echo '<table><thead><th>Food Name</th></thead>';
     foreach($foods as $food){
         echo'<tr>
-        <td>' .$food['name'] . '</td>
+        <td><a href="delete-food.php?foodId=' . $food['foodId'] . '"
+        title="Delete" onclick="return confirmDelete();">
+        '.$food['name'].'
+        </a></td>
         </tr>';
     }
     
